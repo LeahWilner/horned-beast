@@ -32,15 +32,15 @@ class HornedBeast extends React.Component {
 
 
   render() {
-    console.log('props?', this.props);
+    console.log('XXXXXprops?', this.props);
     return(
       <>
       <h2>{this.props.title}</h2>
-      <img src={this.props.image_url} alt={this.props.title} title={this.props.title}/>
+      <img src={this.props.imageURL} alt={this.props.title} title={this.props.title}/>
       <p>{this.props.description}</p>
 
       <div>{this.state.beastFavorite ? 'My Favorite Beast' : ''}</div>
-      <Button></Button>
+      <Button>uyghghjhggh</Button>
       <Button></Button>
         
 
