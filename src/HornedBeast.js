@@ -1,5 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -12,9 +15,10 @@ class HornedBeast extends React.Component {
   
   
   handleLikes = () => {
-    this.setState9({
+    this.setState({
       likes: this.state.likes +1,
     });
+    // console.log('favorites working?');
   }
   
   
@@ -24,27 +28,39 @@ class HornedBeast extends React.Component {
     })
   }
   
-  beastUnfavored = () => {
-    this.setState({
-      beastFavorite: false,
-    })
-  }
+  // beastUnfavored = () => {
+  //   this.setState({
+  //     beastFavorite: false,
+  //   })
+  // }
 
 
   render() {
     console.log('XXXXXprops?', this.props);
     return(
       <>
-      <h2>{this.props.title}</h2>
-      <img src={this.props.imageURL} alt={this.props.title} title={this.props.title}/>
-      <p>{this.props.description}</p>
+      {/* card
+      col */}
 
-      <div>{this.state.beastFavorite ? 'My Favorite Beast' : ''}</div>
-      <Button>uyghghjhggh</Button>
-      <Button></Button>
-        
+<Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={this.props.imageURL} alt={this.props.title} title={this.props.title}/>
+      <Card.Body>
+        <Card.Title>{this.props.title}</Card.Title>
+        <Card.Text>
+        {this.props.description}
+        </Card.Text>
+        <Button variant="primary" onClick={this.handleLikes}>{this.state.likes} Love ❤️</Button>
+      </Card.Body>
+    </Card>
 
+      {/* <h2>{this.props.title}</h2> */}
+      {/* <img src={this.props.imageURL} alt={this.props.title} title={this.props.title}/> */}
+      {/* <p>{this.props.description}</p> */}
 
+      {/* <div>{this.state.beastFavorite ? 'My Favorite Beast' : ''}</div> */}
+      {/* <Button>My Favorite Beast ❤️</Button> */}
+      
+      
       </>
     ) 
   }
