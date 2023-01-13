@@ -15,7 +15,7 @@ class HornedBeast extends React.Component {
   
   
   handleLikes = () => {
-    this.setState9({
+    this.setState({
       likes: this.state.likes +1,
     });
     // console.log('favorites working?');
@@ -28,11 +28,11 @@ class HornedBeast extends React.Component {
     })
   }
   
-  beastUnfavored = () => {
-    this.setState({
-      beastFavorite: false,
-    })
-  }
+  // beastUnfavored = () => {
+  //   this.setState({
+  //     beastFavorite: false,
+  //   })
+  // }
 
 
   render() {
@@ -49,7 +49,7 @@ class HornedBeast extends React.Component {
         <Card.Text>
         {this.props.description}
         </Card.Text>
-        <Button variant="primary">My Favorite Beast ❤️</Button>
+        <Button variant="primary" onClick={this.handleLikes}>{this.state.likes} Love ❤️</Button>
       </Card.Body>
     </Card>
 
@@ -60,9 +60,7 @@ class HornedBeast extends React.Component {
       {/* <div>{this.state.beastFavorite ? 'My Favorite Beast' : ''}</div> */}
       {/* <Button>My Favorite Beast ❤️</Button> */}
       
-        
-
-
+      
       </>
     ) 
   }
