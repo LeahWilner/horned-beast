@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from 'react-bootstrap/Modal';
-import { Card, Button, Col } from "react-bootstrap";
+import { Image } from "react-bootstrap";
+
 
 class SelectedBeast extends React.Component {
 
@@ -26,7 +27,11 @@ class SelectedBeast extends React.Component {
       <>
          <Modal show={this.props.showModal} onHide={this.props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{this.props.selectBeast}</Modal.Title>
+          <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
+          <Modal.Body>
+            <Image width='300px' src={this.props.selectedBeast.image}/>
+            <p>{this.props.selectedBeast.description}</p>
+          </Modal.Body>
         </Modal.Header>
       </Modal>
       </>

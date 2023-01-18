@@ -22,6 +22,16 @@ class HornedBeast extends React.Component {
     // console.log('favorites working?');
   }
   
+  handleClick = () => {
+    // console.log(e.target)
+    let beastData = {
+      image: this.props.imageURL,
+      description: this.props.description,
+      title: this.props.title,
+    }
+
+    this.props.handleOpen(beastData)
+  }
   
   beastFavorite = () => {
     this.setState({
@@ -37,14 +47,15 @@ class HornedBeast extends React.Component {
 
 
   render() {
-    console.log('XXXXXprops?', this.props);
+    // console.log('XXXXXprops?', this.props);
     return(
       <>
       {/* card
       col */}
 
 <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={this.props.imageURL} alt={this.props.title} onClick={this.props.handleOpen}/>
+      <Card.Img variant="top" src={this.props.imageURL} alt={this.props.title}
+      onClick={this.handleClick}/>
       <Card.Body>
         <Card.Title>{this.props.title}</Card.Title>
         <Card.Text>

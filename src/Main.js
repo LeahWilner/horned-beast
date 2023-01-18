@@ -13,13 +13,20 @@ class Main extends React.Component {
   {super(props);
     this.state = {
       showModal: false,
+      selectedBeast: {
+        title: '',
+        description: '',
+        image: '',
 
+      }
     }
 
 
   }
-handleOpen = () => {
+handleOpen = (beastData) => {
+  console.log(beastData);
   this.setState({showModal:true})
+  this.setState({ selectedBeast: beastData})
 }
 
 
@@ -52,7 +59,7 @@ handleOpen = () => {
 
       {beasts}
      </Row>
-     <SelectedBeast showModal={this.state.showModal} handleClose={this.handleClose}/>
+     <SelectedBeast showModal={this.state.showModal} handleClose={this.handleClose} selectedBeast={this.state.selectedBeast}/>
 
       </>
     );
