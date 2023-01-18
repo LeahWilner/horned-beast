@@ -2,11 +2,37 @@ import React from "react";
 import HornedBeast from "./HornedBeast";
 import data from "./data.json"
 import { Grid, Row, Col } from 'react-bootstrap';
+import SelectedBeast from "./SelectedBeast";
+
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 
 class Main extends React.Component {
 
+  constructor(props) 
+  {super(props);
+    this.state = {
+      showModal: false,
+      selectedBeast: {
+        title: '',
+        description: '',
+        image: '',
+
+      }
+    }
+
+
+  }
+handleOpen = (beastData) => {
+  console.log(beastData);
+  this.setState({showModal:true})
+  this.setState({ selectedBeast: beastData})
+}
+
+
+  handleClose = () => {
+    this.setState({showModal:false})
+  }
 
   render() {
 
@@ -16,10 +42,11 @@ class Main extends React.Component {
       beasts.push(
         
         <HornedBeast 
-        beastTitle={newBeast.title}
+        title={newBeast.title}
         imageURL={newBeast.image_url} 
         description={newBeast.description}
         key={index}
+        handleOpen={this.handleOpen}
          />
       );
     });
@@ -32,6 +59,8 @@ class Main extends React.Component {
 
       {beasts}
      </Row>
+     <SelectedBeast showModal={this.state.showModal} handleClose={this.handleClose} selectedBeast={this.state.selectedBeast}/>
+
       </>
     );
   }
