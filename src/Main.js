@@ -2,6 +2,8 @@ import React from "react";
 import HornedBeast from "./HornedBeast";
 import data from "./data.json"
 import { Grid, Row, Col } from 'react-bootstrap';
+import SelectedBeast from "./SelectedBeast";
+
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 
@@ -32,6 +34,7 @@ class Main extends React.Component {
 
       {beasts}
      </Row>
+     <SelectedBeast/>
       </>
     );
   }

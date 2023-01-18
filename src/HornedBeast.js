@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 
+
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);

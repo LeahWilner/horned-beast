@@ -1,7 +1,8 @@
 import React from "react";
 import Modal from 'react-bootstrap/Modal';
+import { Card, Button, Col } from "react-bootstrap";
 
-class Modal extends React.Component {
+class SelectedBeast extends React.Component {
 
   constructor(props){
     super(props);
@@ -19,9 +20,14 @@ class Modal extends React.Component {
     });
   };
 
+  helpHandleOnShow = () => {
+    this.props.handleOnShow(this.props.beastFavorite);
+  };
+
+
 
     render() {
-      return ;
+      return (
       <>
          <Modal show={this.state.showModal} onHide={this.handleClose}>
         <Modal.Header closeButton>
@@ -29,7 +35,7 @@ class Modal extends React.Component {
         </Modal.Header>
       </Modal>
       </>
-    }
+    )}
   }
   
-  export default Modal;
+  export default SelectedBeast;
