@@ -44,7 +44,7 @@ class HornedBeast extends React.Component {
       col */}
 
 <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={this.props.imageURL} alt={this.props.title} title={this.props.title}/>
+      <Card.Img variant="top" src={this.props.imageURL} alt={this.props.title} onClick={this.props.handleOpen}/>
       <Card.Body>
         <Card.Title>{this.props.title}</Card.Title>
         <Card.Text>

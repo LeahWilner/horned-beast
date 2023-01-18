@@ -4,21 +4,16 @@ import { Card, Button, Col } from "react-bootstrap";
 
 class SelectedBeast extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      showModal: false,
-      selectBeast: '',
-    }
-  }
 
-  handleOnShow = (beastFavorite) => {
-    this.setState({
-      showModal: true,
-      selectBeast: beastFavorite
+  // handleOnShow = (beastFavorite) => {
+  //   this.setState({
+  //     showModal: true,
+  //     selectBeast: beastFavorite
 
-    });
-  };
+  //   });
+  // };
+
+  
 
   helpHandleOnShow = () => {
     this.props.handleOnShow(this.props.beastFavorite);
@@ -29,9 +24,9 @@ class SelectedBeast extends React.Component {
     render() {
       return (
       <>
-         <Modal show={this.state.showModal} onHide={this.handleClose}>
+         <Modal show={this.props.showModal} onHide={this.props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{this.state.selectBeast}</Modal.Title>
+          <Modal.Title>{this.props.selectBeast}</Modal.Title>
         </Modal.Header>
       </Modal>
       </>

@@ -9,6 +9,23 @@ import SelectedBeast from "./SelectedBeast";
 
 class Main extends React.Component {
 
+  constructor(props) 
+  {super(props);
+    this.state = {
+      showModal: false,
+
+    }
+
+
+  }
+handleOpen = () => {
+  this.setState({showModal:true})
+}
+
+
+  handleClose = () => {
+    this.setState({showModal:false})
+  }
 
   render() {
 
@@ -18,10 +35,11 @@ class Main extends React.Component {
       beasts.push(
         
         <HornedBeast 
-        beastTitle={newBeast.title}
+        title={newBeast.title}
         imageURL={newBeast.image_url} 
         description={newBeast.description}
         key={index}
+        handleOpen={this.handleOpen}
          />
       );
     });
@@ -34,7 +52,8 @@ class Main extends React.Component {
 
       {beasts}
      </Row>
-     <SelectedBeast/>
+     <SelectedBeast showModal={this.state.showModal} handleClose={this.handleClose}/>
+
       </>
     );
   }
